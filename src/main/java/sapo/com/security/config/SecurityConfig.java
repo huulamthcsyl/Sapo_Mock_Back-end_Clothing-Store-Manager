@@ -75,28 +75,28 @@ public class SecurityConfig {
                                 .hasAuthority("ROLE_ADMIN")
 
 
-                                .requestMatchers(HttpMethod.POST , "/v1/customers/**")
-                                .hasAuthority("ROLE_SUPPORT")
-                                .requestMatchers(HttpMethod.PUT , "/v1/customers/**")
-                                .hasAuthority("ROLE_SUPPORT")
-                                .requestMatchers(HttpMethod.DELETE , "/v1/customers/**")
-                                .hasAuthority("ROLE_SUPPORT")
-
-
-                                .requestMatchers(HttpMethod.POST , "/v1/products/**")
-                                .hasAuthority("ROLE_REPOSITORY")
-                                .requestMatchers(HttpMethod.PUT , "/v1/products/**")
-                                .hasAuthority("ROLE_REPOSITORY")
-                                .requestMatchers(HttpMethod.DELETE , "/v1/products/**")
-                                .hasAuthority("ROLE_REPOSITORY")
-
-
-                                .requestMatchers(HttpMethod.POST , "/v1/orders/**")
-                                .hasAuthority("ROLE_SALE")
-                                .requestMatchers(HttpMethod.PUT , "/v1/orders/**")
-                                .hasAuthority("ROLE_SALE")
-                                .requestMatchers(HttpMethod.DELETE , "/v1/orders/**")
-                                .hasAuthority("ROLE_SALE")
+//                                .requestMatchers(HttpMethod.POST , "/v1/customers/**")
+//                                .hasAuthority("ROLE_SUPPORT")
+//                                .requestMatchers(HttpMethod.PUT , "/v1/customers/**")
+//                                .hasAuthority("ROLE_SUPPORT")
+//                                .requestMatchers(HttpMethod.DELETE , "/v1/customers/**")
+//                                .hasAuthority("ROLE_SUPPORT")
+//
+//
+//                                .requestMatchers(HttpMethod.POST , "/v1/products/**")
+//                                .hasAuthority("ROLE_REPOSITORY")
+//                                .requestMatchers(HttpMethod.PUT , "/v1/products/**")
+//                                .hasAuthority("ROLE_REPOSITORY")
+//                                .requestMatchers(HttpMethod.DELETE , "/v1/products/**")
+//                                .hasAuthority("ROLE_REPOSITORY")
+//
+//
+//                                .requestMatchers(HttpMethod.POST , "/v1/orders/**")
+//                                .hasAuthority("ROLE_SALE")
+//                                .requestMatchers(HttpMethod.PUT , "/v1/orders/**")
+//                                .hasAuthority("ROLE_SALE")
+//                                .requestMatchers(HttpMethod.DELETE , "/v1/orders/**")
+//                                .hasAuthority("ROLE_SALE")
 
 
 //                                .requestMatchers( HttpMethod.GET , "/v1/products" , "/v1/categories" )

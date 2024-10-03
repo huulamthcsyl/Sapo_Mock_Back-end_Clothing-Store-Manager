@@ -35,7 +35,7 @@ public class Order {
     private User creator;
     @Column(unique = true)
     private String code;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "created_on")
     @CreationTimestamp
     private LocalDateTime createdOn;
