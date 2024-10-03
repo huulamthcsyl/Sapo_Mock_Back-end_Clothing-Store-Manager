@@ -18,5 +18,17 @@ public interface UserRepository extends JpaRepository<User , Long> {
 
     Page<User> findAllByRolesName(String roleName, Pageable pageable);
 
+    // Search by name or phone number
+    @Query("SELECT u FROM User u WHERE u.name LIKE %:search% OR u.phoneNumber LIKE %:search%")
+    Page<User> findBySearch( String search, Pageable pageable);
+
+    // Filter by role and search by name or phone number
+    @Query("SELECT u FROM User u JOIN u.roles r WHERE r.name = :role AND (u.name LIKE %:search% OR u.phoneNumber LIKE %:search%)")
+    Page<User> findByRoleAndSearch( String role,  String search, Pageable pageable);
+
+    // Find by role
+    @Query("SELECT u FROM User u JOIN u.roles r WHERE r.name = :role")
+    Page<User> findByRole( String role, Pageable pageable);
+
 
 }

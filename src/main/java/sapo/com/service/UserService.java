@@ -11,6 +11,8 @@ import sapo.com.model.dto.response.UserResponse;
 import sapo.com.model.entity.Role;
 import sapo.com.model.entity.User;
 
+
+
 public interface UserService {
     User register(User user) throws Exception;
     UserResponse login (UserRequest userRequest) throws Exception;
@@ -19,6 +21,8 @@ public interface UserService {
     Page<User> findAll(Pageable pageable);
 
     Page<User> findAllByRolesName(Pageable pageable , String role) ;
+
+    Page<User> findAllBySearch(Pageable pageable , String search);
 
     User update (Long id , User user) throws Exception;
 

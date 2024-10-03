@@ -27,6 +27,7 @@ import sapo.com.security.user_principal.UserPrincipal;
 import sapo.com.service.RoleService;
 import sapo.com.service.UserService;
 
+
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -131,6 +132,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Page<User> findAllByRolesName(Pageable pageable, String role) {
         return userRepository.findAllByRolesName(role, pageable);
+    }
+
+    @Override
+    public Page<User> findAllBySearch(Pageable pageable , String search){
+        return userRepository.findBySearch(search ,pageable);
+
     }
 
     @Override

@@ -30,7 +30,8 @@ public class UserController {
                                       @RequestParam(defaultValue = "0" , name = "page") int page ,
                                       @RequestParam(defaultValue = "name" , name = "sort") String sort ,
                                       @RequestParam(defaultValue = "asc" , name = "order") String order,
-                                      @RequestParam(required = false) String role // Add role filter
+                                      @RequestParam(value = "role" , required = false) String role ,
+                                      @RequestParam(value = "search", required = false) String search
                                       ){
         Pageable pageable ;
         if (order.equals("asc")){
@@ -39,7 +40,11 @@ public class UserController {
             pageable = PageRequest.of(page , limit , Sort.by(sort).descending() );
         }
         Page<User> users;
-        if (role != null && !role.isEmpty()) {
+
+        if (search!= null){
+            users = userService.findAllBySearch(pageable , search);
+        }
+        else if (role != null && !role.isEmpty()) {
             users = userService.findAllByRolesName( pageable, role); // Filter users by role
         } else {
             users = userService.findAll(pageable); // No role filter applied
