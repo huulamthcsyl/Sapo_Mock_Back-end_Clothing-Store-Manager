@@ -51,6 +51,7 @@ public class CustomerDetailResponse {
         this.updatedOn = customer.getUpdatedOn();
         this.note = customer.getNote();
         this.orders = customer.getOrders() != null ? customer.getOrders().stream()
+                .sorted((o1, o2) -> o2.getCreatedOn().compareTo(o1.getCreatedOn()))
                 .map(AllOrderResponse::new)
                 .collect(Collectors.toList()) : new ArrayList<>();
 

@@ -80,12 +80,9 @@ public class ProductServiceImpl implements ProductService {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Sản phẩm không tồn tại hoặc đã bị xóa"));
         if (product.getStatus()) {
-            for (Variant variant : product.getVariants()) {
-                if (!variant.getStatus()) {
-                    product.getVariants().remove(variant);
-                }
-            }
+            product.getVariants().removeIf(variant -> !variant.getStatus());
             ProductResponse productResponse = product.transferToResponse();
+            System.out.println(product.getId());
             statisticSizeColorMaterial(productResponse);
             return productResponse;
         } else

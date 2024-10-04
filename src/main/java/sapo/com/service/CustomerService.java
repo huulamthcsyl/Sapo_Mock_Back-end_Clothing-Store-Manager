@@ -89,6 +89,7 @@ public class CustomerService {
             customer.setGender(customerInForm.isGender());
             customer.setEmail(customerInForm.getEmail());
             customer.setBirthday(customerInForm.getBirthday());
+            customer.setNote(customerInForm.getNote());
 
             return customerRepository.save(customer);
         }else{
