@@ -67,11 +67,11 @@ public class SecurityConfig {
                                 .requestMatchers("/v1/admin/reset_password/**")
                                 .permitAll()
 
-                                .requestMatchers(HttpMethod.POST , "/v1/admin/**","/v1/user/**","/v1/role/**" , "/v1/customers/**" , "/v1/products/**" , "/v1/orders/**" )
+                                .requestMatchers(HttpMethod.POST , "/v1/admin/**","/v1/user/**","/v1/role/**" )
                                 .hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.PUT , "/v1/admin/**","/v1/user/**","/v1/role/**" , "/v1/customers/**" , "/v1/products/**" , "/v1/orders/**" )
+                                .requestMatchers(HttpMethod.PUT , "/v1/admin/**","/v1/user/**","/v1/role/**"  )
                                 .hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.DELETE , "/v1/admin/**","/v1/user/**","/v1/role/**" , "/v1/customers/**" , "/v1/products/**" , "/v1/orders/**" )
+                                .requestMatchers(HttpMethod.DELETE , "/v1/admin/**","/v1/user/**","/v1/role/**" )
                                 .hasAuthority("ROLE_ADMIN")
 
 
